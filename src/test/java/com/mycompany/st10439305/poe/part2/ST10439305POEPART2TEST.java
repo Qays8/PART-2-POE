@@ -24,7 +24,7 @@ public class ST10439305POEPART2TEST {
         assertFalse(longDescriptionTask.checkTaskDescription(), "Description exceeding limit should fail.");
     }
 
-    
+    @Test
     public void testGenerateTaskID() {
         Task task1 = new Task("Login Feature", "Create Login to authenticate users", "Robyn Harrison", 8, "To Do");
         assertTrue(task1.printTaskDetails().contains("Task ID: LO:0:SON"));
