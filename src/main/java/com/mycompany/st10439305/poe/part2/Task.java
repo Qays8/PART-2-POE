@@ -9,7 +9,6 @@ package com.mycompany.st10439305.poe.part2;
  * @author qays2
  */
 class Task {
-    
     private static int taskCount = 0;
     private String taskName;
     private int taskNumber;
@@ -19,7 +18,6 @@ class Task {
     private String taskID;
     private String taskStatus;
 
-
     Task(String taskName, String taskDescription, String developerDetails, int taskDuration, String taskStatus) {
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -28,32 +26,41 @@ class Task {
         this.taskStatus = taskStatus;
         this.taskNumber = taskCount++;
         this.taskID = generateTaskID();
-
     }
 
     private String generateTaskID() {
         String[] devInitials = developerDetails.split(" ");
         String devID = devInitials[devInitials.length - 1].substring(0, 3).toUpperCase();
-        return String.format("AD:%d:%s", taskNumber, devID);
-    
+        String taskIDPrefix = taskName.substring(0, 2).toUpperCase();
+        return String.format("%s:%d:%s", taskIDPrefix, taskNumber, devID);
+    }
+public String printTaskDetails() {
+        return "Task Status: " + taskStatus + "\n" +
+               "Developer Details: " + developerDetails + "\n" +
+               "Task Number: " + taskNumber + "\n" +
+               "Task Name: " + taskName + "\n" +
+               "Task Description: " + taskDescription + "\n" +
+               "Task ID: " + taskID + "\n" +
+               "Task Duration: " + taskDuration + " hours";
     }
 
-    public String printTaskDetails() {
-          return "Task Status: " + taskStatus + "\n" +
-                "Developer Details: " + developerDetails + "\n" +
-                "Task Number: " + taskNumber + "\n" +
-                "Task Name: " + taskName + "\n" +
-                "Task Description: " + taskDescription + "\n" +
-                "Task ID: " + taskID + "\n" +
-                "Duration: " + taskDuration + " hours";
-
-    }
-      // Getter method for task duration
+    // Getter method for task duration
     public int getTaskDuration() {
-        return taskDuration;
+     
+       return taskDuration;
     }
-    public boolean checkTaskDescription(){
-        return taskDescription.length()<=50;
+
+    public boolean checkTaskDescription() {
+        return taskDescription.length() <= 50;
     }
+  }
+
+
+
     
-}
+    
+    
+
+
+    
+    
