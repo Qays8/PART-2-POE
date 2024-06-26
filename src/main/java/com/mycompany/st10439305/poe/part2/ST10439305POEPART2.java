@@ -47,8 +47,14 @@ public class ST10439305POEPART2 {
         }
     }
 
-    // Method to add task
-    private static void addTask() {
+    /* According to Anon(2022) the try and catch block in java is like a safety net
+       that keeps your program from crashing unexpectedly by handling any errors that pop up along the way.
+    
+       This helped me create a block that doesnt take any number that is less than 0 or negative number 
+       in other words.
+    */
+    
+    private static void addTask() {   // Method to add task
         int numTasks = 0;
         while (numTasks <= 0) {
             try {
@@ -114,3 +120,10 @@ public class ST10439305POEPART2 {
 }
 
 
+/*   Referencing List
+
+Anon.2022. Java try....catch in java .(Version 1.0-SNAPSHOT).[source code]. https://www.programiz.com/java-programming/try-catch. (Accessed 25 May 2024)
+Niraj.2023. Java String toUpperCase() method .(Version 1.0-SNAPSHOT).[source code]. https://www.geeksforgeeks.org/java-string-touppercase-method-with-examples/. (Accessed 25 May 2024)
+Anon.2023. SubString in Java .(Version 1.0-SNAPSHOT).[source code]. https://www.javatpoint.com/substring. (Accessed 26 May 2024)
+
+*/

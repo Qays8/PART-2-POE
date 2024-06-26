@@ -27,7 +27,12 @@ class Task {
         this.taskNumber = taskCount++;
         this.taskID = generateTaskID();
     }
-
+      /*  According to Niraj(2023) the toUpperCase method in java converts all characters of the string into an uppercase letter 
+          it help me convert the user's input for the taskID into capital letters.
+    
+         According to Anon(2022) substring in java provides the built-in substring() method that extract a substring from the given string 
+         This helped me return a substring instead of a full word for the ID.
+    */
     private String generateTaskID() {
         String[] devInitials = developerDetails.split(" ");
         String devID = devInitials[devInitials.length - 1].substring(0, 3).toUpperCase();
